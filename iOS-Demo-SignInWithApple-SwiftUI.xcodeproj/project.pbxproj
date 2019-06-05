@@ -13,8 +13,8 @@
 		5BDCCD6622A7C633006DFB9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDCCD6522A7C633006DFB9F /* Assets.xcassets */; };
 		5BDCCD6922A7C633006DFB9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BDCCD6822A7C633006DFB9F /* Preview Assets.xcassets */; };
 		5BDCCD6C22A7C633006DFB9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BDCCD6A22A7C633006DFB9F /* LaunchScreen.storyboard */; };
-		5BDCCD7722A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCCD7622A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUITests.swift */; };
-		5BDCCD8222A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCCD8122A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUIUITests.swift */; };
+		5BDCCD9122A7C684006DFB9F /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDCCD9022A7C684006DFB9F /* AuthenticationServices.framework */; };
+		5BDCCD9422A7C775006DFB9F /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDCCD9322A7C775006DFB9F /* SignInWithAppleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +44,10 @@
 		5BDCCD6B22A7C633006DFB9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BDCCD6D22A7C633006DFB9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BDCCD7222A7C633006DFB9F /* iOS-Demo-SignInWithApple-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Demo-SignInWithApple-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BDCCD7622A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Demo_SignInWithApple_SwiftUITests.swift; sourceTree = "<group>"; };
-		5BDCCD7822A7C633006DFB9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BDCCD7D22A7C633006DFB9F /* iOS-Demo-SignInWithApple-SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-Demo-SignInWithApple-SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BDCCD8122A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Demo_SignInWithApple_SwiftUIUITests.swift; sourceTree = "<group>"; };
-		5BDCCD8322A7C633006DFB9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BDCCD9022A7C684006DFB9F /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		5BDCCD9222A7C68B006DFB9F /* iOS-Demo-SignInWithApple-SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS-Demo-SignInWithApple-SwiftUI.entitlements"; sourceTree = "<group>"; };
+		5BDCCD9322A7C775006DFB9F /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDCCD9122A7C684006DFB9F /* AuthenticationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,9 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				5BDCCD5E22A7C632006DFB9F /* iOS-Demo-SignInWithApple-SwiftUI */,
-				5BDCCD7522A7C633006DFB9F /* iOS-Demo-SignInWithApple-SwiftUITests */,
-				5BDCCD8022A7C633006DFB9F /* iOS-Demo-SignInWithApple-SwiftUIUITests */,
 				5BDCCD5D22A7C632006DFB9F /* Products */,
+				5BDCCD8F22A7C684006DFB9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +98,7 @@
 		5BDCCD5E22A7C632006DFB9F /* iOS-Demo-SignInWithApple-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				5BDCCD9222A7C68B006DFB9F /* iOS-Demo-SignInWithApple-SwiftUI.entitlements */,
 				5BDCCD5F22A7C632006DFB9F /* AppDelegate.swift */,
 				5BDCCD6122A7C632006DFB9F /* SceneDelegate.swift */,
 				5BDCCD6322A7C632006DFB9F /* ContentView.swift */,
@@ -106,6 +106,7 @@
 				5BDCCD6A22A7C633006DFB9F /* LaunchScreen.storyboard */,
 				5BDCCD6D22A7C633006DFB9F /* Info.plist */,
 				5BDCCD6722A7C633006DFB9F /* Preview Content */,
+				5BDCCD9322A7C775006DFB9F /* SignInWithAppleButton.swift */,
 			);
 			path = "iOS-Demo-SignInWithApple-SwiftUI";
 			sourceTree = "<group>";
@@ -118,22 +119,12 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5BDCCD7522A7C633006DFB9F /* iOS-Demo-SignInWithApple-SwiftUITests */ = {
+		5BDCCD8F22A7C684006DFB9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5BDCCD7622A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUITests.swift */,
-				5BDCCD7822A7C633006DFB9F /* Info.plist */,
+				5BDCCD9022A7C684006DFB9F /* AuthenticationServices.framework */,
 			);
-			path = "iOS-Demo-SignInWithApple-SwiftUITests";
-			sourceTree = "<group>";
-		};
-		5BDCCD8022A7C633006DFB9F /* iOS-Demo-SignInWithApple-SwiftUIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5BDCCD8122A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUIUITests.swift */,
-				5BDCCD8322A7C633006DFB9F /* Info.plist */,
-			);
-			path = "iOS-Demo-SignInWithApple-SwiftUIUITests";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDCCD9422A7C775006DFB9F /* SignInWithAppleButton.swift in Sources */,
 				5BDCCD6022A7C632006DFB9F /* AppDelegate.swift in Sources */,
 				5BDCCD6222A7C632006DFB9F /* SceneDelegate.swift in Sources */,
 				5BDCCD6422A7C632006DFB9F /* ContentView.swift in Sources */,
@@ -277,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BDCCD7722A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BDCCD8222A7C633006DFB9F /* iOS_Demo_SignInWithApple_SwiftUIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Demo-SignInWithApple-SwiftUI/iOS-Demo-SignInWithApple-SwiftUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "iOS-Demo-SignInWithApple-SwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 8J6VSUTQNX;
@@ -454,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "iOS-Demo-SignInWithApple-SwiftUI/iOS-Demo-SignInWithApple-SwiftUI.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "iOS-Demo-SignInWithApple-SwiftUI/Preview\\ Content";
 				DEVELOPMENT_TEAM = 8J6VSUTQNX;

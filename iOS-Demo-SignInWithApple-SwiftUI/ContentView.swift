@@ -9,15 +9,18 @@
 import SwiftUI
 
 struct ContentView : View {
-    var body: some View {
-        Text("Hello World")
+  @State var credentials: Credentials?
+  
+  var body: some View {
+    VStack {
+      if $credentials.value != nil {
+        Text("User: \($credentials.value?.user ?? "")")
+        Text("Given name: \($credentials.value?.givenName ?? "")")
+        Text("Last name: \($credentials.value?.givenName ?? "")")
+        Text("Email name: \($credentials.value?.givenName ?? "")")
+      } else {
+        SignInWithAppleButton(credentials: $credentials)
+      }
     }
+  }
 }
-
-#if DEBUG
-struct ContentView_Previews : PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-#endif
