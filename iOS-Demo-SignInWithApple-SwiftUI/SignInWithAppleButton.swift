@@ -9,6 +9,13 @@
 import SwiftUI
 import AuthenticationServices
 
+extension String: Error { }
+
+enum CredentialsOrError {
+  case credentials(user: String, givenName: String?, familyName: String?, email: String?)
+  case error(_ error: Error)
+}
+
 struct Credentials {
   let user: String
   let givenName: String?
@@ -18,7 +25,7 @@ struct Credentials {
 
 struct SignInWithAppleButton: View {
   
-  @Binding var credentials: Credentials?
+  @Binding var credentials: CredentialsOrError?
   
   var body: some View {
     let button = ButtonController(credentials: $credentials)
@@ -31,7 +38,7 @@ struct SignInWithAppleButton: View {
     let button: ASAuthorizationAppleIDButton = ASAuthorizationAppleIDButton()
     let vc: UIViewController = UIViewController()
     
-    @Binding var credentials: Credentials?
+    @Binding var credentials: CredentialsOrError?
     
     func makeCoordinator() -> Coordinator {
       return Coordinator(self)
@@ -71,9 +78,16 @@ struct SignInWithAppleButton: View {
       }
       
       func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
+        guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential else {
+          parent.credentials = .error("Credentials are not of type ASAuthorizationAppleIDCredential")
+          return
+        }
         
-        parent.credentials = Credentials(user: credentials.user, givenName: credentials.fullName?.givenName, familyName: credentials.fullName?.familyName, email: credentials.email)
+        parent.credentials = .credentials(user: credentials.user, givenName: credentials.fullName?.givenName, familyName: credentials.fullName?.familyName, email: credentials.email)
+      }
+      
+      func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        parent.credentials = .error(error)
       }
     }
   }
