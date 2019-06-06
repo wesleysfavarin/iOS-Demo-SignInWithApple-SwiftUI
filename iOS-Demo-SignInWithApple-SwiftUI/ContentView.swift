@@ -46,6 +46,7 @@ struct ContentView : View {
         Text("Email: \($credentials.value!.values?.email  ?? "")")
       } else {
         Text($credentials.value!.error!.localizedDescription)
+          .color(.red)
       }
     }
   }
