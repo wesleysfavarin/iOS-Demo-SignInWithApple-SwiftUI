@@ -6,3 +6,4 @@ You need to do some setup in your developer account to issue sign in requests. R
 
 <img src="https://j.gifs.com/mOEAyR.gif" width="350" alt="Sign in with Apple SwiftUI component in action">
 =
+000
